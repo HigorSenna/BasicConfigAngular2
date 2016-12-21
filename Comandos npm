@@ -1,0 +1,15 @@
+Para Linux:
+Npm (Node package manager)
+Caso nao haja Npm instalado em sua maquina:
+  ir em uma pasta : sudo apt-get install npm.
+
+-Criar uma pasta para o projeto
+-cd nomePastaProjeto
+-npm init -y(irá criar o package.json default).
+-colocar os arquivos package.json e tsconfig.json(subistituir o arquivo package.json criado anteriormente).
+-npm install (irá instalar todas as dependencias necessárias).
+
+Comandos extras:
+npm start -> compila o projeto e starta o servidor(ja executa npm run tsc:w e npm run lite)
+npm run tsc -> apenas compila os arquivos
+npm run tsc:w -> compila os arquivos e atualiza em tempo real as modificacoes;
