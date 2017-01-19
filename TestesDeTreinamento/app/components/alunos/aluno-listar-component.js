@@ -18,19 +18,19 @@ var AlunoListarComponent = (function () {
     }
     AlunoListarComponent.prototype.listarTodos = function () {
         var _this = this;
-        this.alunoService.listarTodos().subscribe(function (alunos) { return _this.alunos = alunos; }, function (erro) { return _this.msgErro = erro; });
-        console.log(this.alunos);
-        /*if(this.alunos != null){
-            for(let al of this.alunos){
-                this.aluno = new Aluno();
-                this.aluno.nome = al['nomeMedico'];
-                this.alunosTeste.push(this.aluno);
-            }
-
-            this.alunos = this.alunosTeste;
-        }*/
-        //this.alunos = this.alunosTeste;
+        this.alunoService.listarTodos().subscribe(function (alunos) { return _this.alunos = alunos; }, // o angular seta sozinho os atributos da classe de acordo com o retorno do webservice
+        function (// o angular seta sozinho os atributos da classe de acordo com o retorno do webservice
+            erro) { return _this.msgErro = erro; });
     };
+    /*
+    PASSANDO MAIS DE UM METODO PARA EXECUTAR QUANDO RETORNAR DO SERVICO
+        istarTodos() {
+            this.alunoService.listarTodos().subscribe(
+                alunos =>{ metodo1(),metodo2(),this.alunos = alunos},// o angular seta sozinho os atributos da classe de acordo com o retorno do webservice
+                erro => this.msgErro = erro
+            );
+        }
+    */
     AlunoListarComponent.prototype.ngOnInit = function () {
         this.listarTodos();
     };

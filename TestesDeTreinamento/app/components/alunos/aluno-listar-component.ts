@@ -24,24 +24,19 @@ export class AlunoListarComponent implements OnInit {
 
 	listarTodos() {
 		this.alunoService.listarTodos().subscribe(
-			alunos => this.alunos = alunos,
+			alunos => this.alunos = alunos,// o angular seta sozinho os atributos da classe de acordo com o retorno do webservice
 			erro => this.msgErro = erro
-		);
-		console.log(this.alunos)
-		/*if(this.alunos != null){
-			for(let al of this.alunos){
-				this.aluno = new Aluno();
-				this.aluno.nome = al['nomeMedico'];
-				this.alunosTeste.push(this.aluno);
-			}	
-
-			this.alunos = this.alunosTeste;
-		}*/
-		
-
-		//this.alunos = this.alunosTeste;
+		);	
 	}
-
+/*
+PASSANDO MAIS DE UM METODO PARA EXECUTAR QUANDO RETORNAR DO SERVICO
+	istarTodos() {
+		this.alunoService.listarTodos().subscribe(
+			alunos =>{ metodo1(),metodo2(),this.alunos = alunos},// o angular seta sozinho os atributos da classe de acordo com o retorno do webservice
+			erro => this.msgErro = erro
+		);	
+	}
+*/
 	ngOnInit() {
 		this.listarTodos();
 	}

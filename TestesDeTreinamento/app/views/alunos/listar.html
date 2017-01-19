@@ -4,7 +4,7 @@
 </div>
 
 <div>
-    <!--<table class="table table-striped">
+    <table class="table table-striped">
         <tr>
             <th>Nome</th>
             <th>Email</th>
@@ -16,8 +16,8 @@
             </th>
         </tr>
         <tr *ngFor="let aluno of alunos; #id=index">
-            <td>{{ aluno.nome }}</td>
-            <td>{{ aluno.email }}</td>
+            <td>{{ aluno.nmMedico }}</td>
+            <td>{{ aluno.crmMedico }}</td>
             <td>
 				<a class="btn btn-warning" 
                     [routerLink]="['/aluno-visualizar/'+id]">
@@ -40,5 +40,5 @@
         [titulo]="'Excluir Aluno'"
         [descricao]="'Deseja realmente excluir o aluno selecionado?'"
         (onConfirm)="onExcluir($event)">
-    </modal-util>   -->
+    </modal-util> 
 </div>
